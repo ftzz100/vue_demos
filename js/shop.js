@@ -39,7 +39,7 @@ var vm = new Vue({
                         name: '肥皂',
                         price: 5,
                         count: 1,
-                        checked: false
+                        checked: true
                     },
                     {
                         id: 2,
@@ -67,7 +67,7 @@ var vm = new Vue({
                         name: '菠萝',
                         price: 10,
                         count: 1,
-                        checked: true
+                        checked: false
                     },
                     {
                         id: 2,
@@ -81,7 +81,7 @@ var vm = new Vue({
                         name: '樱桃',
                         price: 50,
                         count: 1,
-                        checked: true
+                        checked: false
                     },
                     
                 ]
