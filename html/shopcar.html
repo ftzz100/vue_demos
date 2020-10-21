@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>第五章练习2</title>
+    <link rel="stylesheet" href="../css/shop.css">
+</head>
+
+<body>
+    <div id="app" v-cloak>
+      <template v-if="allItemCount" >
+        <div id="shopCar">
+            <table>
+                <thead>
+                    <tr>
+                        <th>分类名称</th>
+                        <th>选择</th>
+                        <th></th>
+                        <th>商品名称</th>
+                        <th>商品单价</th>
+                        <th>购买数量</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template v-for="(cat,catIndex) in list">
+                        <!--  -->
+                        <tr v-for="(item,itemIndex) in cat.items">
+                            <!-- <td>{{ itemIndex+1 }}</td> -->
+                            
+                            <td :rowspan="cat.items.length" v-if="itemIndex===0">
+                                <input type="checkbox" @click="checkCat(catIndex)" :checked="cat.checked">
+                                {{ cat.category }}
+                            </td>
+                            <td>
+                                <input type="checkbox" @click="checkItem(catIndex,itemIndex)" :checked="item.checked">
+                            </td>
+                            <td> {{ itemIndex+1 }} </td>
+                            <td> {{item.name}} </td>
+                            <td> {{item.price}} </td>
+                            <td>
+                                <button @click="handleReduce(catIndex,itemIndex)" :disabled="item.count===1">
+                                    -
+                                </button>
+                                <span class="littleNum">{{ item.count }}</span>
+                                <button @click="handleAdd(catIndex,itemIndex)">
+                                    +
+                                </button>
+                            </td>
+                            <td>
+                                <button @click="handleRemove(catIndex,itemIndex)">
+                                    移除
+                                </button>
+                            </td>
+                        </tr>
+                        
+                    </template>
+                    
+                    
+                    
+                </tbody>
+            </table>
+            <div class="allPrice">
+                全选：<input type="checkbox" @click="checkItemAll" :checked="checkedAll">
+            </div>
+            <div class="allPrice">
+                <span>总价：</span>
+                <span>¥ {{ totalPrice }}</span>
+            </div>
+          </template>
+          <div v-else class="tempCart">购物车为空</div>
+        </div>
+        
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script src="../js/shop.js"></script>
+    
+</body>
+</html>

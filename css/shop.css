@@ -1,0 +1,47 @@
+[v-cloak]{
+    display: none;
+}
+#shopCar{
+    
+    width: 60%;
+    
+    margin: 0 auto;
+    margin-top: 30px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    text-align: center;
+}
+table, table th, table td{
+    border: 1px solid olivedrab;
+    padding: 8px 16px;
+    text-align: left;
+}
+th{
+    font-weight: 600;
+    white-space: nowrap;
+    background: #568e41;
+    color: white;
+}
+
+.allPrice{
+    margin-top:3px;
+}
+
+.tempCart{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    background: #568e41;
+    line-height: 35px;
+    color: white;
+    margin-top: 30px;
+}
+.littleNum{
+    display: inline-block;
+    width: 10px;
+    text-align: center;
+}
